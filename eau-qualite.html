@@ -3,12 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#667eea">
-    <meta name="description" content="Vérifiez la qualité de l'eau du robinet dans votre commune">
     <title>Qualité de l'Eau - France</title>
-    <link rel="manifest" href="manifest.json">
-    <link rel="icon" type="image/png" href="icon-192.png">
-    <link rel="apple-touch-icon" href="icon-192.png">
     <style>
         /* ===== BASIC STYLING ===== */
         * {
@@ -23,7 +18,7 @@
             min-height: 100vh;
             padding: 40px 20px;
         }
-
+        
         .container {
             max-width: 800px;
             margin: 0 auto;
@@ -106,15 +101,8 @@
 
         .results h2 {
             color: #333;
-            margin-bottom: 10px;
-            padding-bottom: 0;
-        }
-
-        .network-info {
-            color: #666;
-            font-size: 0.9rem;
+            margin-bottom: 20px;
             padding-bottom: 15px;
-            margin-bottom: 15px;
             border-bottom: 2px solid #f0f0f0;
         }
 
@@ -135,7 +123,7 @@
         /* ===== DATA CARDS ===== */
         .indicator-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 15px;
             margin-top: 20px;
         }
@@ -157,11 +145,6 @@
 
         .indicator-card.info {
             border-left-color: #667eea;
-        }
-
-        .indicator-card.data-error {
-            border-left-color: #6c757d;
-            background: #f8f9fa;
         }
 
         .status-badge {
@@ -188,34 +171,11 @@
             color: #004085;
         }
 
-        .status-badge.data-error {
-            background: #e9ecef;
-            color: #6c757d;
-        }
-
         .indicator-note {
             font-size: 0.75rem;
-            color: #999;
-            margin-top: 5px;
-        }
-
-        .sparkline-container {
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-
-        .sparkline {
-            display: block;
-        }
-
-        .sparkline .spark-point {
-            opacity: 1;
-        }
-
-        .sparkline-dates {
-            font-size: 0.65rem;
-            color: #aaa;
-            margin-top: 2px;
+            color: #666;
+            margin-top: 3px;
+            font-style: italic;
         }
 
         .source-link {
@@ -226,66 +186,6 @@
 
         .source-link a {
             color: #667eea;
-        }
-
-        /* ===== SUMMARY BADGE ===== */
-        .summary-badge {
-            padding: 15px 20px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .summary-badge.good {
-            background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
-            border: 2px solid #28a745;
-        }
-
-        .summary-badge.warning {
-            background: linear-gradient(135deg, #fff3cd 0%, #ffeeba 100%);
-            border: 2px solid #ffc107;
-        }
-
-        .summary-badge.bad {
-            background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
-            border: 2px solid #dc3545;
-        }
-
-        .summary-badge.data-error {
-            background: linear-gradient(135deg, #e2e3e5 0%, #d6d8db 100%);
-            border: 2px solid #6c757d;
-        }
-
-        .summary-icon {
-            font-size: 2rem;
-        }
-
-        .summary-content {
-            flex: 1;
-        }
-
-        .summary-title {
-            font-weight: bold;
-            font-size: 1.1rem;
-            color: #333;
-            margin-bottom: 4px;
-        }
-
-        .summary-details {
-            font-size: 0.85rem;
-            color: #666;
-        }
-
-        .data-warning {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 10px 15px;
-            margin-bottom: 15px;
-            border-radius: 0 8px 8px 0;
-            font-size: 0.85rem;
-            color: #856404;
         }
 
         .indicator-name {
@@ -317,72 +217,6 @@
             border-top: 1px solid #eee;
             font-size: 0.85rem;
             color: #888;
-        }
-
-        /* ===== RESPONSIVE: MOBILE ===== */
-        @media (max-width: 600px) {
-            body {
-                padding: 20px 10px;
-            }
-
-            h1 {
-                font-size: 1.8rem;
-            }
-
-            .subtitle {
-                font-size: 0.9rem;
-                margin-bottom: 25px;
-            }
-
-            .search-box {
-                padding: 20px 15px;
-                border-radius: 20px;
-            }
-
-            .search-form {
-                flex-direction: column;
-            }
-
-            .search-input {
-                padding: 12px 15px;
-                font-size: 1rem;
-            }
-
-            .search-button {
-                padding: 12px 20px;
-                font-size: 1rem;
-            }
-
-            .results {
-                padding: 20px 15px;
-                border-radius: 12px;
-            }
-
-            .results h2 {
-                font-size: 1.3rem;
-            }
-
-            .indicator-grid {
-                grid-template-columns: 1fr;
-                gap: 12px;
-            }
-
-            .indicator-card {
-                padding: 15px;
-            }
-
-            .indicator-value {
-                font-size: 1.3rem;
-            }
-
-            .sparkline-container svg {
-                width: 100%;
-                max-width: 150px;
-            }
-
-            .source-link {
-                font-size: 0.7rem;
-            }
         }
     </style>
 </head>
@@ -423,25 +257,11 @@
         // Source: https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000465574
         const KEY_PARAMETERS = {
             // === Parameters with LEGAL LIMITS (health-related) ===
-            // validMin/validMax = physically possible range (for data validation)
-            '1340': { name: 'Nitrates', unit: 'mg/L', limit: 50, hasLimit: true, validMin: 0, validMax: 500 },
-            '1350': { name: 'Nitrites', unit: 'mg/L', limit: 0.5, hasLimit: true, validMin: 0, validMax: 50 },
-            '1302': { name: 'Chlorures', unit: 'mg/L', limit: 250, hasLimit: true, validMin: 0, validMax: 5000 },
-            '1338': { name: 'Sulfates', unit: 'mg/L', limit: 250, hasLimit: true, validMin: 0, validMax: 2000 },
-            '1347': {
-                name: 'pH',
-                unit: '',
-                limitMin: 6.5,
-                limitMax: 9,
-                hasLimit: true,
-                validMin: 0,
-                validMax: 14,
-                // Taste notes for out-of-range but valid values
-                tasteNotes: {
-                    low: { max: 6.5, note: 'Goût légèrement acide possible' },
-                    high: { min: 9, note: 'Goût amer ou savonneux possible' }
-                }
-            },
+            '1340': { name: 'Nitrates', unit: 'mg/L', limit: 50, hasLimit: true },
+            '1350': { name: 'Nitrites', unit: 'mg/L', limit: 0.5, hasLimit: true },
+            '1302': { name: 'Chlorures', unit: 'mg/L', limit: 250, hasLimit: true },
+            '1338': { name: 'Sulfates', unit: 'mg/L', limit: 250, hasLimit: true },
+            '1347': { name: 'pH', unit: '', limitMin: 6.5, limitMax: 9, hasLimit: true },
             // === Parameters WITHOUT limits (informational only) ===
             // These minerals are beneficial - no health risk
             '1305': {
@@ -471,11 +291,11 @@
                 infoType: 'hardness',
                 // Ranges: 0-8 très douce, 8-15 idéale, 15-25 acceptable, 25-30 moyennement dure, >30 dure
                 ranges: [
-                    { max: 8, label: 'très douce', note: 'Peut corroder les canalisations' },
-                    { max: 15, label: 'idéale', note: 'Bon équilibre minéraux/calcaire' },
-                    { max: 25, label: 'acceptable', note: 'Légèrement calcaire' },
-                    { max: 30, label: 'moyennement dure', note: 'Dépôts possibles' },
-                    { max: Infinity, label: 'dure', note: 'Risque de tartre' }
+                    { max: 8, label: 'Très douce', note: 'Peut corroder les canalisations' },
+                    { max: 15, label: 'Idéale', note: 'Bon équilibre minéraux/calcaire' },
+                    { max: 25, label: 'Acceptable', note: 'Légèrement calcaire' },
+                    { max: 30, label: 'Moyennement dure', note: 'Dépôts possibles' },
+                    { max: Infinity, label: 'Dure', note: 'Risque de tartre' }
                 ]
             },
         };
@@ -516,8 +336,6 @@
                 const commune = communeData.data[0];
                 const codeCommune = commune.code_commune;
                 const nomCommune = commune.nom_commune;
-                const nomReseau = commune.nom_reseau;
-                const nomQuartier = commune.nom_quartier !== '-' ? commune.nom_quartier : null;
 
                 // Step 2: Get water quality results for this commune
                 const resultsResponse = await fetch(
@@ -529,8 +347,8 @@
                     throw new Error(`Pas de données disponibles pour ${nomCommune}.`);
                 }
 
-                // Step 3: Display the results (use original search term for header)
-                displayResults(cityName, nomReseau, nomQuartier, resultsData.data);
+                // Step 3: Display the results
+                displayResults(nomCommune, resultsData.data);
 
             } catch (error) {
                 resultsDiv.innerHTML = `<div class="error">❌ ${error.message}</div>`;
@@ -540,100 +358,34 @@
         }
 
         // ===== DISPLAY RESULTS =====
-        function displayResults(searchedCity, networkName, quarterName, data) {
-            // Group ALL results by parameter (for sparklines) and track the latest
-            const historyByParam = {};
+        function displayResults(communeName, data) {
+            // Group results by parameter, keeping only the most recent
             const latestByParam = {};
             let mostRecentDate = null;
 
             for (const result of data) {
                 const code = result.code_parametre;
                 const date = new Date(result.date_prelevement);
-                const value = result.resultat_numerique;
-
-                // Skip if no numeric value
-                if (value === null || value === undefined) continue;
 
                 // Track most recent date overall
                 if (!mostRecentDate || date > mostRecentDate) {
                     mostRecentDate = date;
                 }
 
-                // Store all results for history
-                if (!historyByParam[code]) {
-                    historyByParam[code] = [];
-                }
-                historyByParam[code].push({ date, value });
-
-                // Keep track of the most recent result
+                // Keep only the most recent result for each parameter
                 if (!latestByParam[code] || date > new Date(latestByParam[code].date_prelevement)) {
                     latestByParam[code] = result;
                 }
             }
 
-            // Sort history by date for each parameter
-            for (const code of Object.keys(historyByParam)) {
-                historyByParam[code].sort((a, b) => a.date - b.date);
-            }
-
-            // Build the HTML and track issues for summary
+            // Build the HTML
             let cardsHtml = '';
-            const issues = [];        // Non-conforme parameters
-            const dataErrors = [];    // Impossible values (bad API data)
-            const qualityMetrics = {  // Track quality indicators
-                allBelowHalf: true,   // All regulated params < 50% of limit
-                allBelow80: true,     // All regulated params < 80% of limit
-                nitratesLow: false,   // Nitrates < 25 mg/L
-                idealHardness: false, // TH between 8-15°f
-                hasGoodMinerals: false // Good calcium or magnesium
-            };
 
             for (const [code, info] of Object.entries(KEY_PARAMETERS)) {
                 const result = latestByParam[code];
                 if (result && result.resultat_numerique !== null) {
                     const value = result.resultat_numerique;
-
-                    // Check for impossible values (data validation)
-                    const isDataError = checkDataError(value, info);
-                    if (isDataError) {
-                        dataErrors.push({
-                            name: info.name,
-                            value: value,
-                            message: isDataError
-                        });
-                    }
-
-                    const status = isDataError ? 'data-error' : getStatus(value, info);
-
-                    // Track non-conforme parameters for summary
-                    if (status === 'non-conforme' && !isDataError) {
-                        issues.push(info.name);
-                    }
-
-                    // Track quality metrics (only for valid data)
-                    if (!isDataError) {
-                        // Check regulated parameters vs limits
-                        if (info.hasLimit && info.limit) {
-                            const percentOfLimit = (value / info.limit) * 100;
-                            if (percentOfLimit >= 50) qualityMetrics.allBelowHalf = false;
-                            if (percentOfLimit >= 80) qualityMetrics.allBelow80 = false;
-                        }
-                        // Nitrates specifically
-                        if (code === '1340' && value < 25) {
-                            qualityMetrics.nitratesLow = true;
-                        }
-                        // Hardness (TH) - ideal range
-                        if (code === '1372' && value >= 8 && value <= 15) {
-                            qualityMetrics.idealHardness = true;
-                        }
-                        // Good minerals (Calcium > 60 or Magnesium > 20)
-                        if (code === '1305' && value >= 60) {
-                            qualityMetrics.hasGoodMinerals = true;
-                        }
-                        if (code === '1319' && value >= 20) {
-                            qualityMetrics.hasGoodMinerals = true;
-                        }
-                    }
+                    const status = getStatus(value, info);
 
                     // Build limit text
                     let limitText = '';
@@ -647,35 +399,18 @@
                     let statusBadge = '';
                     let infoNote = '';
 
-                    if (isDataError) {
-                        // Data error: show as inconsistent value
-                        statusBadge = `<span class="status-badge data-error">valeur incohérente</span>`;
-                        infoNote = `<div class="indicator-note" style="color: #6c757d;">${isDataError}</div>`;
-                    } else if (info.hasLimit) {
-                        // Parameters with legal limits: show conforme/non conforme
-                        const badgeText = status === 'conforme' ? 'conforme' : 'non conforme';
+                    if (info.hasLimit) {
+                        // Parameters with legal limits: show CONFORME/NON CONFORME
+                        const badgeText = status === 'conforme' ? 'CONFORME' : 'NON CONFORME';
                         statusBadge = `<span class="status-badge ${status}">${badgeText}</span>`;
-
-                        // Add taste note for pH if out of range but valid
-                        if (info.tasteNotes) {
-                            if (info.tasteNotes.low && value < info.tasteNotes.low.max) {
-                                infoNote = `<div class="indicator-note">${info.tasteNotes.low.note}</div>`;
-                            } else if (info.tasteNotes.high && value > info.tasteNotes.high.min) {
-                                infoNote = `<div class="indicator-note">${info.tasteNotes.high.note}</div>`;
-                            }
-                        }
                     } else {
                         // Informational parameters: show mineral/hardness info
-                        const infoLabel = getInfoLabel(value, info);
+                        const infoLabel =   Label(value, info);
                         if (infoLabel) {
                             statusBadge = `<span class="status-badge info">${infoLabel.label}</span>`;
                             infoNote = `<div class="indicator-note">${infoLabel.note}</div>`;
                         }
                     }
-
-                    // Generate sparkline if we have history
-                    const history = historyByParam[code];
-                    const sparklineHtml = generateSparkline(history, info);
 
                     cardsHtml += `
                         <div class="indicator-card ${status}">
@@ -684,36 +419,20 @@
                                 ${value} <span class="indicator-unit">${info.unit}</span>
                             </div>
                             ${limitText ? `<div class="indicator-limit">${limitText}</div>` : ''}
-                            ${infoNote}
-                            ${sparklineHtml}
                             ${statusBadge}
+                            ${infoNote}
                         </div>
                     `;
                 }
             }
-
-            // Build summary badge
-            const summaryHtml = buildSummary(issues, dataErrors, qualityMetrics);
 
             // If no cards, show a message
             if (!cardsHtml) {
                 cardsHtml = '<p>Aucun indicateur clé disponible pour cette commune.</p>';
             }
 
-            // Build header with searched city (capitalize first letter)
-            const displayCity = searchedCity.charAt(0).toUpperCase() + searchedCity.slice(1).toLowerCase();
-            let headerHtml = `<h2>📍 ${displayCity}</h2>`;
-
-            // Show network dependency info
-            let networkInfo = `Cette commune dépend du site d'analyse <strong>${networkName}</strong>`;
-            if (quarterName) {
-                networkInfo += ` (${quarterName})`;
-            }
-
             resultsDiv.innerHTML = `
-                ${headerHtml}
-                <div class="network-info">${networkInfo}</div>
-                ${summaryHtml}
+                <h2>📍 ${communeName}</h2>
                 <div class="indicator-grid">
                     ${cardsHtml}
                 </div>
@@ -721,84 +440,7 @@
                     Dernière analyse: ${mostRecentDate ? mostRecentDate.toLocaleDateString('fr-FR') : 'Inconnue'}
                 </div>
                 <div class="source-link">
-                    Valeurs de vigilance des eaux destinées à la consommation humaine: <a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000465574" target="_blank">Arrêté du 11 janvier 2007</a>
-                </div>
-            `;
-        }
-
-        // ===== HELPER: Check for impossible data values =====
-        function checkDataError(value, paramInfo) {
-            // Check if value is within physically possible range
-            if (paramInfo.validMin !== undefined && value < paramInfo.validMin) {
-                return `Valeur impossible (min: ${paramInfo.validMin})`;
-            }
-            if (paramInfo.validMax !== undefined && value > paramInfo.validMax) {
-                return `Valeur impossible (${paramInfo.name} max: ${paramInfo.validMax})`;
-            }
-            return null; // No error
-        }
-
-        // ===== HELPER: Build summary badge =====
-        function buildSummary(issues, dataErrors, qualityMetrics) {
-            let summaryClass, icon, title, details;
-
-            // Real health issues take priority
-            if (issues.length > 0) {
-                if (issues.length === 1) {
-                    // One real issue
-                    summaryClass = 'warning';
-                    icon = '⚠️';
-                    title = `Attention: ${issues[0]} élevé`;
-                    details = `${issues[0]} dépasse la limite réglementaire. Consultez les détails ci-dessous.`;
-                } else {
-                    // Multiple real issues
-                    summaryClass = 'warning';
-                    icon = '⚠️';
-                    title = 'Plusieurs paramètres hors normes';
-                    details = `${issues.join(' et ')} dépassent les limites réglementaires. Consultez votre mairie ou l'ARS.`;
-                }
-            } else {
-                // No real issues - determine quality level (data errors don't block this)
-                summaryClass = 'good';
-                icon = '✅';
-
-                // Build quality details
-                const qualityPoints = [];
-
-                // Excellente: all params < 50% of limit + good indicators
-                if (qualityMetrics.allBelowHalf && (qualityMetrics.nitratesLow || qualityMetrics.idealHardness || qualityMetrics.hasGoodMinerals)) {
-                    title = 'Eau potable - Excellente qualité';
-                    if (qualityMetrics.nitratesLow) qualityPoints.push('faible teneur en nitrates');
-                    if (qualityMetrics.idealHardness) qualityPoints.push('dureté idéale');
-                    if (qualityMetrics.hasGoodMinerals) qualityPoints.push('bon apport minéral');
-                    details = qualityPoints.length > 0
-                        ? `Tous les paramètres bien en dessous des limites. ${qualityPoints.join(', ').charAt(0).toUpperCase() + qualityPoints.join(', ').slice(1)}.`
-                        : 'Tous les paramètres bien en dessous des limites réglementaires.';
-                }
-                // Bonne: all params < 80% of limit
-                else if (qualityMetrics.allBelow80) {
-                    title = 'Eau potable - Bonne qualité';
-                    details = 'Tous les paramètres réglementés sont conformes aux normes françaises.';
-                }
-                // Correcte: all params conform but some close to limits
-                else {
-                    title = 'Eau potable';
-                    details = 'Conforme aux normes. Certains paramètres proches des limites réglementaires.';
-                }
-
-                // Add note about data errors if any
-                if (dataErrors.length > 0) {
-                    details += ' Certaines mesures semblent incorrectes.';
-                }
-            }
-
-            return `
-                <div class="summary-badge ${summaryClass}">
-                    <div class="summary-icon">${icon}</div>
-                    <div class="summary-content">
-                        <div class="summary-title">${title}</div>
-                        <div class="summary-details">${details}</div>
-                    </div>
+                    Limites réglementaires: <a href="https://www.legifrance.gouv.fr/loda/id/JORFTEXT000000465574" target="_blank">Arrêté du 11 janvier 2007</a>
                 </div>
             `;
         }
@@ -841,7 +483,7 @@
 
             // Minerals (Calcium, Magnésium, Potassium)
             if (paramInfo.infoType === 'mineral') {
-                let label = 'minéral bénéfique';
+                let label = 'Minéral bénéfique';
                 let note = 'Sans risque pour la santé';
 
                 // Check if water is "rich" in this mineral
@@ -853,100 +495,6 @@
             }
 
             return null;
-        }
-
-        // ===== HELPER: Generate sparkline SVG =====
-        function generateSparkline(history, paramInfo) {
-            // Need at least 2 points to draw a line
-            if (!history || history.length < 2) return '';
-
-            const width = 150;
-            const height = 40;
-            const padding = 5;
-
-            // Get min/max values for scaling
-            const values = history.map(h => h.value);
-            let minVal = Math.min(...values);
-            let maxVal = Math.max(...values);
-
-            // Include limit in scale if parameter has one
-            const limit = paramInfo.limit;
-            if (limit !== undefined) {
-                maxVal = Math.max(maxVal, limit * 1.1); // Show limit with some margin
-                minVal = Math.min(minVal, 0);
-            }
-
-            // Avoid division by zero if all values are the same
-            if (maxVal === minVal) {
-                maxVal = minVal + 1;
-            }
-
-            // Calculate points for the sparkline
-            const points = history.map((h, i) => {
-                const x = padding + (i / (history.length - 1)) * (width - 2 * padding);
-                const y = height - padding - ((h.value - minVal) / (maxVal - minVal)) * (height - 2 * padding);
-                return { x, y, value: h.value, date: h.date };
-            });
-
-            // Build the path
-            const pathD = points.map((p, i) => `${i === 0 ? 'M' : 'L'} ${p.x} ${p.y}`).join(' ');
-
-            // Build limit line if applicable
-            let limitLine = '';
-            if (limit !== undefined) {
-                const limitY = height - padding - ((limit - minVal) / (maxVal - minVal)) * (height - 2 * padding);
-                limitLine = `<line x1="${padding}" y1="${limitY}" x2="${width - padding}" y2="${limitY}"
-                    stroke="#dc3545" stroke-width="1" stroke-dasharray="3,2" opacity="0.7"/>`;
-            }
-
-            // Show key dots: first, last, min, max (works on mobile without hover)
-            const firstPoint = points[0];
-            const lastPoint = points[points.length - 1];
-            const minPoint = points.reduce((min, p) => p.value < min.value ? p : min, points[0]);
-            const maxPoint = points.reduce((max, p) => p.value > max.value ? p : max, points[0]);
-
-            // Use Set-like filtering to avoid duplicate dots at same position
-            const keyPoints = [firstPoint, lastPoint, minPoint, maxPoint];
-            const uniquePoints = keyPoints.filter((p, i) =>
-                keyPoints.findIndex(other => other.x === p.x) === i
-            );
-
-            const circles = uniquePoints.map(p => {
-                const dateStr = p.date.toLocaleDateString('fr-FR');
-                return `<circle cx="${p.x}" cy="${p.y}" r="3" fill="#667eea" class="spark-point">
-                    <title>${dateStr}: ${p.value} ${paramInfo.unit}</title>
-                </circle>`;
-            }).join('');
-
-            // Date range text with count
-            const firstDate = history[0].date.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' });
-            const lastDate = history[history.length - 1].date.toLocaleDateString('fr-FR', { month: 'short', year: 'numeric' });
-            const count = history.length;
-
-            return `
-                <div class="sparkline-container">
-                    <svg width="${width}" height="${height}" class="sparkline">
-                        ${limitLine}
-                        <path d="${pathD}" fill="none" stroke="#667eea" stroke-width="2"/>
-                        ${circles}
-                    </svg>
-                    <div class="sparkline-dates">${firstDate} → ${lastDate} (${count} mesures)</div>
-                </div>
-            `;
-        }
-
-        // ===== SERVICE WORKER REGISTRATION =====
-        // Register service worker for offline support (PWA)
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then((registration) => {
-                        console.log('Service Worker registered:', registration.scope);
-                    })
-                    .catch((error) => {
-                        console.log('Service Worker registration failed:', error);
-                    });
-            });
         }
     </script>
 </body>
